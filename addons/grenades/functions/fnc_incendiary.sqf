@@ -128,7 +128,11 @@ _light setLightDayLight false;
 _light lightAttachObject [_projectile, [0,0,0]];
 
 // --- sound
-private _sound = createSoundSource ["Sound_Fire", _position, [], 0];
+private _sound = objNull;
+
+if (isServer) then {
+    _sound = createSoundSource ["Sound_Fire", _position, [], 0];
+};
 
 [{
     {deleteVehicle _x} forEach _this;
