@@ -157,3 +157,17 @@ if (isServer) then {
         _x inflame true;
     };
 } forEach (_position nearObjects EFFECT_SIZE);
+
+// --- burn car engine
+if ("ace_cookoff" call EFUNC(common,isModLoaded)) then {
+    private _vehicle = _position nearestObject "Car";
+    if (!local _vehicle || {_vehicle isKindOf "Wheeled_APC_F"}) exitWith {};
+
+    private _engineSelection = getText (_vehicle call CBA_fnc_getObjectConfig >> "HitPoints" >> "HitEngine" >> "name");
+    private _enginePosition = _vehicle modelToWorld (_vehicle selectionPosition _engineSelection);
+
+    if (_position distance _enginePosition < EFFECT_SIZE * 2) then {
+        _vehicle setHit [_engineSelection, 1];
+        _vehicle call EFUNC(cookoff,engineFire);
+    };
+};
