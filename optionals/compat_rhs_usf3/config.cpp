@@ -11,6 +11,8 @@ class CfgPatches {
         authors[] = {"Ruthberg", "GitHawk", "BaerMitUmlaut"};
         url = ECSTRING(main,URL);
         VERSION_CONFIG;
+
+        addonRootClass = "A3_Characters_F"; // this prevents any patched class from requiring this addon
     };
 };
 

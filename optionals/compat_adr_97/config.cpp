@@ -11,6 +11,8 @@ class CfgPatches {
         authors[] = {"Nic547"};
         url = ECSTRING(main,URL);
         VERSION_CONFIG;
+
+        addonRootClass = "A3_Characters_F"; // this prevents any patched class from requiring this addon
     };
 };
 
