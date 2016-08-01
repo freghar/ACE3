@@ -8,6 +8,10 @@ Various tweaks to the in-game map, including:
 - Map illumination (optional)
 - Blue Force Tracker (optional)
 
+#### Variables
+- `this setVariable ["ACE_map_hideBlueForceMarker", true];`
+  - Hide BFT map marker for the group/unit.
+
 
 ## Maintainers
 
